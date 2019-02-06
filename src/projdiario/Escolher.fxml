@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="708.0" style="-fx-background-color: #8B7E66; -fx-border-color: #8B7E66;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projdiario.EscolherController">
+   <items>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8B7E66;">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 30; -fx-font-weight: bold;" text="Consultar ?">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="308.0">
+               <children>
+                  <Label style="-fx-text-fill: white; -fx-font-weight: bold;" text="Quando ?">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="DataQuando" style="-fx-background-color: #8B7E66; -fx-border-color: #8B7E66;" />
+               </children>
+            </HBox>
+            <CheckBox fx:id="check" mnemonicParsing="false" onAction="#checkB" style="-fx-font-weight: bold;" text="Vários dias ?" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </CheckBox>
+            <HBox fx:id="Hbox" alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="309.0">
+               <children>
+                  <Label fx:id="LabelAte" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Até quando ?">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="DataAte" style="-fx-background-color: #8B7E66; -fx-border-color: #8B7E66;" />
+               </children>
+            </HBox>
+            <Button fx:id="BConsultar" mnemonicParsing="false" onAction="#BConsultar" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #EEAD0E; -fx-background-radius: 100; -fx-font-weight: bold;" stylesheets="@button.css" text="Consultar">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+               </VBox.margin></Button>
+            <TextArea fx:id="TextConsultar" prefHeight="285.0" prefWidth="310.0" stylesheets="@EscolherDes.css">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TextArea>
+            <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="329.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="30.0" onMouseClicked="#GuardarPDF" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pdf%20(1).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="30.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@print.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="apagar" fitHeight="150.0" fitWidth="30.0" onMouseClicked="#ApagarConsultar" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@eraser%20(1).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="procurar" fitHeight="150.0" fitWidth="30.0" onMouseClicked="#procurar" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@map.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8B7E66;">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 30; -fx-font-weight: bold;" text="Ou escrever ?">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="308.0">
+               <children>
+                  <Label style="-fx-text-fill: white; -fx-font-weight: bold;" text="Dia ?">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="DataEscrever" style="-fx-background-color: #8B7E66; -fx-border-color: #8B7E66;" />
+               </children>
+            </HBox>
+            <Button fx:id="BConfirmar" mnemonicParsing="false" onAction="#ConfirmarButton" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #EEAD0E; -fx-font-weight: bold; -fx-background-radius: 100;" stylesheets="@button.css" text="Confirmar data">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+               </VBox.margin></Button>
+            <TextArea fx:id="TextEscrever" prefHeight="281.0" prefWidth="309.0" promptText="Escreva aqui o seu texto..." stylesheets="@EscolherDes.css">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TextArea>
+            <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="308.0">
+               <children>
+                  <ImageView fx:id="ImgGuardar" fitHeight="150.0" fitWidth="30.0" onMouseClicked="#imagePicker" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@save.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Reflection bottomOpacity="0.05" fraction="0.48" topOpacity="0.25" />
+                     </effect>
+                  </ImageView>
+                  <Button fx:id="sair" mnemonicParsing="false" onAction="#sair" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #EEAD0E; -fx-font-weight: bold; -fx-background-radius: 100;" stylesheets="@button.css" text="Terminar sessão">
+                     <HBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>
